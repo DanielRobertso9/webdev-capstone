@@ -1,0 +1,118 @@
+.recipe_detail {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+h2{
+    color: rgb(29, 222, 183);
+    font-size: 30px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.recipe_detail_ingredients li{
+    margin-top: 1rem;
+    border-bottom: black solid 1px;
+}
+
+.recipe_detail_ingredients{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    width: auto;
+    padding: 1rem;
+    background-color: rgb(238, 238, 238) ;
+    border-radius: 5px;
+}
+
+.recipe_detail_instructions{
+    margin-top: -80px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    background-color: rgb(250, 250, 250);
+    font-weight: 500;
+}
+
+.recipe_detail_instructions li{
+    margin-top: 1rem;
+}
+
+/* BANNER CSS */
+
+.recipe_detail_banner{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    padding-left: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.recipe_detail_banner__title{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.recipe_detail_banner_info{
+    width: 200px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    background-color: white;
+    opacity: .7;
+}
+
+.info_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: black;
+}
+
+.info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.info_title{
+    color: rgb(29, 222, 183);
+    font-size: 10px;
+    text-align: center;
+}
+
+.info_detail{
+    color: black;
+    font-size: 10px;
+    text-align: center;
+    margin-top: -10px;
+}

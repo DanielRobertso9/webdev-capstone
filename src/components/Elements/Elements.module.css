@@ -1,0 +1,68 @@
+/* HEADER CSS  */
+
+header {
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: rgb(205, 205, 205);
+    box-sizing: border-box;
+}
+
+nav {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+  font-size: 22px;
+  color: black;
+}
+
+.linkBtn {
+  color: black;
+  background-color: rgb(205, 205, 205);
+  border: none;
+  border-radius: 10%;
+  transition: all 0.30s ease-in-out;
+  }
+
+.linkBtn:hover{
+  box-shadow: 10px 5px 5px rgb(60, 60, 60);
+  background-color: rgb(194, 194, 194);
+}
+
+.linkBtn:active {
+  background-color: rgb(130, 130, 130);
+  box-shadow: 2px 1px 1px rgb(0, 0, 0);
+}
+
+
+
+
+
+/* FOOTER CSS */
+
+footer {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: absolute;
+    bottom: 1;
+    background-color: rgb(203, 203, 203);
+    box-sizing: border-box;
+}
+h5 {
+    font-size: 25px;
+    color: black;
+    margin-bottom: 10px;
+}
+
