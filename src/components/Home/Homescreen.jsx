@@ -28,7 +28,9 @@ const Homescreen = () => {
         console.error(error);
       });
   }, []);
-
+if (recipes.length === 0) {
+    return <div>Loading...</div>;
+  } else {
   return (
     <div>
       <Banner recipes= {recipes}/>
@@ -36,5 +38,6 @@ const Homescreen = () => {
     </div>
   );
 };
+}
 
 export default Homescreen;
