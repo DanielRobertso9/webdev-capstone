@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-evenly;
     margin: 0 auto;
-    width: 90%;
-    max-width: 1200px;
+    width: 95%;
+    max-width: 1400px;
     padding: 0 1rem;
 }
 h2{
@@ -52,17 +52,12 @@ h2{
     height: 400px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding-left: 250px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 10px;
-}
-
-.recipe_detail_banner__title{
-    color: white;
-    font-size: 30px;
-    text-align: center;
 }
 
 .recipe_detail_banner_info{
@@ -115,4 +110,107 @@ h2{
     font-size: 10px;
     text-align: center;
     margin-top: -10px;
+}
+
+.recipe_detail_banner_title{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 30rem;
+    margin-top: -15rem;
+}
+
+.recipe_detail_banner_title button{
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(29, 222, 183);
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.recipe_detail_banner_title button:hover{
+    background-color: rgb(29, 222, 183);
+    box-shadow: 10px 5px 5px rgb(60, 60, 60);
+    color: white;
+    cursor: pointer;
+}
+
+.recipe_detail_banner_title button:active{
+    background-color: rgb(29, 222, 183);
+    box-shadow: 2px 1px 1px rgb(0, 0, 0);
+    color: white;
+}
+
+.recipe_detail_banner_title h1{
+    margin-bottom: -10px;
+}
+
+.icon2{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    border-radius: 50%;
+    color: black;
+
+}
+
+/* add to calendar css */
+
+.add_to_calendar{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    gap: 1rem;
+    background-color: lightgray;
+    padding-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.add_to_calendar h3{
+    color: rgb(29, 222, 183);
+    font-size: 20px;
+    text-align: center;
+}
+
+.add_to_calendar select{
+    width: 70%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(238, 238, 238);
+    color: black;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.add_to_calendar_btn{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(29, 222, 183);
+    color: white;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.add_to_calendar_btn:hover{
+    background-color: rgb(29, 222, 183);
+    box-shadow: 10px 5px 5px rgb(60, 60, 60);
+    color: white;
+    cursor: pointer;
+}
+
+.add_to_calendar_btn:active{
+    background-color: rgb(29, 222, 183);
+    box-shadow: 2px 1px 1px rgb(0, 0, 0);
+    color: white;
 }

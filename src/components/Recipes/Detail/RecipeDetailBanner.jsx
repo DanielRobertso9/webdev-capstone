@@ -3,9 +3,21 @@ import classes from "./Detail.module.css";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { PiCookingPotFill } from "react-icons/pi";
 import {GiHealthPotion} from "react-icons/gi";
+import {GrFavorite} from "react-icons/gr";
+import axios from "axios";
 
 
 const RecipeDetailBanner = ({ recipe }) => {
+  function addToFavorite() {
+    const body = {
+      Title: recipe.title,
+      ID: recipe.id,
+    };
+    axios.post("http://localhost:8080/addFavorite", body).then((res) => {
+      console.log(res);
+    });
+  }
+
   if (recipe.length === 0) {
     return null;
   } else {
@@ -48,6 +60,10 @@ const RecipeDetailBanner = ({ recipe }) => {
             </div>
           </div>
         </div>
+        <div className={classes.recipe_detail_banner_title}>
+          <h1>{recipe.title}</h1>
+          <button onClick={addToFavorite}><GrFavorite className={classes.icon2}/>Add to Favorite</button>
+          </div>
       </div>
     );
   }

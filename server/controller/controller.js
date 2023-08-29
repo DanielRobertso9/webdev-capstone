@@ -1,59 +1,50 @@
-// const {CONNECTION_STRING} = process.env.CONNECTION_STRING;
-// const Sequelize = require("sequelize");
-
-// const sequelize = new Sequelize(CONNECTION_STRING, {
-//     dialect: "postgres",
-//     dialectOptions: {
-//         ssl: {
-//             rejectUnauthorize: false
-//         }
-//     }
-// });
+const { sequelize } = require("../util/database");
 
 module.exports = {
-  events: async (req, res) => {
+  getEvents: async (req, res) => {
     try {
-      const Events = [[
-        {
-            title: "Pancakes",
-            type: "Breakfast",
-            start: new Date(2023, 7, 1, 8, 0),
-            end: new Date(2023, 7, 1, 9, 0),
-            id: 654495
-        },
-        {
-            title: "Asian Lettuce Wraps",
-            type: "Lunch",
-            start: new Date(2023, 7, 1, 12, 0),
-            end: new Date(2023, 7, 1, 13, 0),
-            id: 632847
-        },
-        {
-            title: "Beef Braised in Red Wine",
-            type: "Dinner",
-            start: new Date(2023, 7, 1, 18, 0),
-            end: new Date(2023, 7, 1, 19, 0),
-            id: 634588
-        },
-        {
-            title: "Chocolate Chip Cookies",
-            type: "Snack",
-            start: new Date(2023, 7, 1, 15, 0),
-            end: new Date(2023, 7, 1, 16, 0),
-            id: 715568
-        },
-        {
-            title: "Cinnamon Sugar Fried Apples",
-            type: "Dessert",
-            start: new Date(2023, 7, 1, 20, 0),
-            end: new Date(2023, 7, 1, 21, 0),
-            id: 639487
-        },
-    ]];
-      res.status(200).send(Events);
+      const Events = await sequelize.query(
+        `SELECT * FROM "public.Events"`
+      );
+      res.status(200).send(Events);;
     } catch (err) {
       console.log(err);
       res.sendStatus(500);
     }
   },
+  getFavorites: async (req, res) => {
+    try {
+      const Favorites = await sequelize.query(
+        `SELECT * FROM "public.Favorites"`
+      );
+      res.status(200).send(Favorites);;
+    } catch (err) {
+      console.log(err);
+      res.sendStatus(500);
+    }
+  },
+  addFavorite: async (req, res) => {
+    const { Title, ID } = req.body;
+    try {
+      const newFavorite = await sequelize.query(
+        `INSERT INTO "public.Favorites" ("Title", "ID") VALUES ('${Title}', '${ID}')`
+      );
+      res.status(200).send(newFavorite);
+    } catch (err) {
+      console.log(err);
+      res.sendStatus(500);
+    }
+  },
+  addEvent: async (req, res) => {
+    const { Title, ID, Type, Start, End } = req.body;
+    try {
+      const newEvent = await sequelize.query(
+        `INSERT INTO "public.Events" ("Title", "ID", "Type", "Start", "End") VALUES ('${Title}', '${ID}', '${Type}', '${Start}', '${End}')`
+      );
+      res.status(200).send(newEvent);
+    } catch (err) {
+      console.log(err);
+      res.sendStatus(500);
+    }
+  }
 };

@@ -7,9 +7,14 @@ const {REACT_APP_PORT} = process.env
 app.use(express.json())
 app.use(cors())
 
-const {events} = require('./controller/controller')
+const {getEvents, addFavorite, addEvent, getFavorites} = require('./controller/controller')
 
-app.get('/events', events)
+app.get('/getEvents', getEvents)
+app.get('/getFavorites', getFavorites)
+
+app.post('/addFavorite', addFavorite)
+app.post('/addEvent', addEvent)
+
 
 
 

@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-
 const localizer = momentLocalizer(moment);
 
 const MyCalendar = () => {
@@ -16,7 +15,7 @@ const MyCalendar = () => {
     
   useEffect(() => {
     axios
-      .get('http://localhost:8080/events')
+      .get('http://localhost:8080/getEvents')
       .then((res) => {
         setEvents(res.data[0]);
       })
@@ -28,10 +27,11 @@ const MyCalendar = () => {
 
   const cleanedEvents = events.map((event) => {
     return {
-      id: event.id,
-      title: event.title,
-      start: new Date(event.start),
-      end: new Date(event.end),
+      key: event.Key,
+      id: event.ID,
+      title: event.Title,
+      start: new Date(event.Start),
+      end: new Date(event.End),
     };
   });
 
