@@ -28,6 +28,7 @@ const AddToCalendar = ({ recipe }) => {
         start: "",
         end: "",
       });
+      alert("Added to Calendar");
     });
   }
 

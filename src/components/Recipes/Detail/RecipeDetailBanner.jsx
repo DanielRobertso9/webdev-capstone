@@ -14,6 +14,7 @@ const RecipeDetailBanner = ({ recipe }) => {
       ID: recipe.id,
     };
     axios.post("http://localhost:8080/addFavorite", body).then((res) => {
+      alert("Added to Favorite");
       console.log(res);
     });
   }
