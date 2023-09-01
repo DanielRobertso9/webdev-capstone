@@ -3,6 +3,7 @@ import axios from "axios";
 import SimilarSlides from "./SimilarSlides";
 import classes from "./Recommended.module.css";
 import { useParams } from "react-router-dom";
+const {REACT_APP_RAPIDAPI_KEY} = process.env
 
 const Recommended = () => {
   const [recommended, setRecommended] = useState([]);
@@ -13,7 +14,7 @@ const Recommended = () => {
       method: "GET",
       url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${params}/similar`,
       headers: {
-        "X-RapidAPI-Key": "7df69d277cmshdc52973bf58612ep151c29jsn2d06cb7cc892",
+        "X-RapidAPI-Key": REACT_APP_RAPIDAPI_KEY,
         "X-RapidAPI-Host":
           "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
       },

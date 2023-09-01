@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import RecipeDetailBanner from "./Detail/RecipeDetailBanner";
 import RecipeDetail from "./Detail/RecipeDetail";
+const {REACT_APP_RAPIDAPI_KEY} = process.env
 
 const RecipeScreen = () => {
   const { id } = useParams();
@@ -14,7 +15,7 @@ const RecipeScreen = () => {
       method: "GET",
       url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/information`,
       headers: {
-        "X-RapidAPI-Key": "7df69d277cmshdc52973bf58612ep151c29jsn2d06cb7cc892",
+        "X-RapidAPI-Key": REACT_APP_RAPIDAPI_KEY,
         "X-RapidAPI-Host":
           "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
       },

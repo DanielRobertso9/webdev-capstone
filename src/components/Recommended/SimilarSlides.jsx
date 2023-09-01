@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 import SlideShow from "./SlideShow";
 import RecipesCard from "../Recipes/RecipesCard";
+const {REACT_APP_RAPIDAPI_KEY} = process.env
 
 const SimilarSlides = ({ recommended }) => {
   const [recipes, setRecipes] = useState([]);
@@ -18,7 +19,7 @@ const SimilarSlides = ({ recommended }) => {
       url: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/informationBulk",
       params: { ids: recipeIdsString },
       headers: {
-        "X-RapidAPI-Key": "7df69d277cmshdc52973bf58612ep151c29jsn2d06cb7cc892",
+        "X-RapidAPI-Key": REACT_APP_RAPIDAPI_KEY,
         "X-RapidAPI-Host":
           "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
       },
